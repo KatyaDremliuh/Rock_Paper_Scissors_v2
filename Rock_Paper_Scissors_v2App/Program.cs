@@ -16,7 +16,7 @@ namespace Rock_Paper_Scissors_v2App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new pictBoxPaperWin());
         }
     }
 }

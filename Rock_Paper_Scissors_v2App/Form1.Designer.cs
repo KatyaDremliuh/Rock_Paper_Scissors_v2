@@ -1,7 +1,7 @@
 ﻿
 namespace Rock_Paper_Scissors_v2App
 {
-    partial class Form1
+    partial class pictBoxPaperWin
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Rock_Paper_Scissors_v2App
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pictBoxPaperWin));
             this.labelBorderCompRock = new System.Windows.Forms.Label();
             this.labelBorderUserRock = new System.Windows.Forms.Label();
             this.labelBorderUserPaper = new System.Windows.Forms.Label();
@@ -45,9 +45,15 @@ namespace Rock_Paper_Scissors_v2App
             this.imgRock = new System.Windows.Forms.PictureBox();
             this.imgPaper = new System.Windows.Forms.PictureBox();
             this.imgScissor = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgRock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPaper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgScissor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // labelBorderCompRock
@@ -195,12 +201,45 @@ namespace Rock_Paper_Scissors_v2App
             this.imgScissor.TabStop = false;
             this.imgScissor.Click += new System.EventHandler(this.imgScissors_Click);
             // 
-            // Form1
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(653, 250);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(197, 147);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(353, 250);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(197, 152);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(53, 250);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(197, 147);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 17;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictBoxPaperWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.imgPaper);
             this.Controls.Add(this.txtReadName);
             this.Controls.Add(this.labelInfoTable);
@@ -216,11 +255,14 @@ namespace Rock_Paper_Scissors_v2App
             this.Controls.Add(this.labelBorderUserRock);
             this.Controls.Add(this.labelBorderCompRock);
             this.Controls.Add(this.labelBorderUserScissors);
-            this.Name = "Form1";
+            this.Name = "pictBoxPaperWin";
             this.Text = "Rock-Paper-Scissors_v2";
             ((System.ComponentModel.ISupportInitialize)(this.imgRock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPaper)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgScissor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,6 +285,9 @@ namespace Rock_Paper_Scissors_v2App
         private System.Windows.Forms.TextBox txtReadName;
         private System.Windows.Forms.PictureBox imgPaper;
         private System.Windows.Forms.PictureBox imgScissor;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 

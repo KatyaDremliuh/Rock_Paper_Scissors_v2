@@ -4,12 +4,12 @@ using System.Windows.Forms;
 
 namespace Rock_Paper_Scissors_v2App
 {
-    public partial class Form1 : Form
+    public partial class pictBoxPaperWin : Form
     {
         int _computerCount; // число побед компа
         int _userCount; // число побед игрока
 
-        public Form1()
+        public pictBoxPaperWin()
         {
             InitializeComponent();
         }
@@ -140,15 +140,15 @@ namespace Rock_Paper_Scissors_v2App
             }
             else if (sumOfChoise == 1)
             {
-                return "Paper wrapped a stone.";
+                return "Paper wrapped a stone."; // Б
             }
             else if (sumOfChoise == 3)
             {
-                return "A stone broke scissors.";
+                return "A stone broke scissors."; // К
             }
             else // сумма равна 2, но не ничья (ножницы-бумага)
             {
-                return "Scissors cut paper.";
+                return "Scissors cut paper."; // Н
             }
         }
 
