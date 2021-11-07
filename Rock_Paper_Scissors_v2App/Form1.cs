@@ -41,5 +41,28 @@ namespace Rock_Paper_Scissors_v2App
             imgPaper.Enabled = choice;
             imgScissor.Enabled = choice;
         }
+
+        // выбор знака компьютером
+        // бумага - 0, камень - 1, ножницы -2
+        private int ComputerChoise()
+        {
+            Random random = new Random();
+            int computerChoise = random.Next(0, 3);
+
+            switch (computerChoise)
+            {
+                case 0:
+                    labelBorderCompPaper.BackColor = Color.Red;
+                    break;
+                case 1:
+                    labelBorderCompRock.BackColor = Color.Red;
+                    break;
+                case 2:
+                    labelBorderCompScissors.BackColor = Color.Red;
+                    break;
+            }
+
+            return computerChoise;
+        }
     }
 }
