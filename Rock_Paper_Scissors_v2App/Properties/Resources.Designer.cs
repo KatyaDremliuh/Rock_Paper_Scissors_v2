@@ -63,9 +63,9 @@ namespace Rock_Paper_Scissors_v2App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Paper {
+        internal static System.Drawing.Bitmap Paper_removebg {
             get {
-                object obj = ResourceManager.GetObject("Paper", resourceCulture);
+                object obj = ResourceManager.GetObject("Paper-removebg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Rock_Paper_Scissors_v2App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Rock {
+        internal static System.Drawing.Bitmap Rock_removebg {
             get {
-                object obj = ResourceManager.GetObject("Rock", resourceCulture);
+                object obj = ResourceManager.GetObject("Rock-removebg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

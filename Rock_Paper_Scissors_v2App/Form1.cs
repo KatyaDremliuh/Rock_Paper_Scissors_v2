@@ -6,8 +6,8 @@ namespace Rock_Paper_Scissors_v2App
 {
     public partial class Form1 : Form
     {
-        int computerCount = 0; // число побед компа
-        int userCount = 0; // число побед игрока
+        int _computerCount; // число побед компа
+        int _userCount; // число побед игрока
 
         public Form1()
         {
@@ -87,19 +87,19 @@ namespace Rock_Paper_Scissors_v2App
             if ((differentCompUser == -2) || (differentCompUser == 1))
             {
                 labelInfoTable.Text = InfoTable(computerChoise, userChoise);
-                userCount++;
+                _userCount++;
             }
             else if ((differentCompUser == -1) || (differentCompUser == 2))
             {
                 labelInfoTable.Text = InfoTable(computerChoise, userChoise);
-                computerCount++;
+                _computerCount++;
             }
             else // то есть differentCompUser = 0
             {
                 labelInfoTable.Text = InfoTable(computerChoise, userChoise);
             }
 
-            labelScore.Text = computerCount.ToString() + " : " + userCount.ToString();
+            labelScore.Text = _computerCount + " : " + _userCount;
         }
 
         private void BorderColor(Color backColor)

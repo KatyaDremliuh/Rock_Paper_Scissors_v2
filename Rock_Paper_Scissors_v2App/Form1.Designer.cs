@@ -29,24 +29,25 @@ namespace Rock_Paper_Scissors_v2App
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.labelBorderCompRock = new System.Windows.Forms.Label();
             this.labelBorderUserRock = new System.Windows.Forms.Label();
             this.labelBorderUserPaper = new System.Windows.Forms.Label();
             this.labelBorderCompPaper = new System.Windows.Forms.Label();
             this.labelBorderUserScissors = new System.Windows.Forms.Label();
             this.labelBorderCompScissors = new System.Windows.Forms.Label();
-            this.imgScissor = new System.Windows.Forms.PictureBox();
-            this.imgPaper = new System.Windows.Forms.PictureBox();
-            this.imgRock = new System.Windows.Forms.PictureBox();
             this.labelComputerName = new System.Windows.Forms.Label();
             this.labelUserName = new System.Windows.Forms.Label();
             this.labelScore = new System.Windows.Forms.Label();
             this.buttonNext = new System.Windows.Forms.Button();
             this.labelInfoTable = new System.Windows.Forms.Label();
             this.txtReadName = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.imgScissor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgPaper)).BeginInit();
+            this.imgRock = new System.Windows.Forms.PictureBox();
+            this.imgPaper = new System.Windows.Forms.PictureBox();
+            this.imgScissor = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgRock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPaper)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgScissor)).BeginInit();
             this.SuspendLayout();
             // 
             // labelBorderCompRock
@@ -96,39 +97,6 @@ namespace Rock_Paper_Scissors_v2App
             this.labelBorderCompScissors.Name = "labelBorderCompScissors";
             this.labelBorderCompScissors.Size = new System.Drawing.Size(158, 158);
             this.labelBorderCompScissors.TabIndex = 6;
-            // 
-            // imgScissor
-            // 
-            this.imgScissor.Image = global::Rock_Paper_Scissors_v2App.Properties.Resources.Scissors;
-            this.imgScissor.Location = new System.Drawing.Point(382, 64);
-            this.imgScissor.Name = "imgScissor";
-            this.imgScissor.Size = new System.Drawing.Size(150, 150);
-            this.imgScissor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgScissor.TabIndex = 8;
-            this.imgScissor.TabStop = false;
-            this.imgScissor.Click += new System.EventHandler(this.imgScissors_Click);
-            // 
-            // imgPaper
-            // 
-            this.imgPaper.Image = global::Rock_Paper_Scissors_v2App.Properties.Resources.Paper;
-            this.imgPaper.Location = new System.Drawing.Point(202, 64);
-            this.imgPaper.Name = "imgPaper";
-            this.imgPaper.Size = new System.Drawing.Size(150, 150);
-            this.imgPaper.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgPaper.TabIndex = 5;
-            this.imgPaper.TabStop = false;
-            this.imgPaper.Click += new System.EventHandler(this.imgPaper_Click);
-            // 
-            // imgRock
-            // 
-            this.imgRock.Image = global::Rock_Paper_Scissors_v2App.Properties.Resources.Rock;
-            this.imgRock.Location = new System.Drawing.Point(22, 64);
-            this.imgRock.Name = "imgRock";
-            this.imgRock.Size = new System.Drawing.Size(150, 150);
-            this.imgRock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgRock.TabIndex = 2;
-            this.imgRock.TabStop = false;
-            this.imgRock.Click += new System.EventHandler(this.imgRock_Click);
             // 
             // labelComputerName
             // 
@@ -194,6 +162,39 @@ namespace Rock_Paper_Scissors_v2App
             this.txtReadName.Visible = false;
             this.txtReadName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtReadName_KeyDown);
             // 
+            // imgRock
+            // 
+            this.imgRock.Image = ((System.Drawing.Image)(resources.GetObject("imgRock.Image")));
+            this.imgRock.Location = new System.Drawing.Point(22, 64);
+            this.imgRock.Name = "imgRock";
+            this.imgRock.Size = new System.Drawing.Size(150, 150);
+            this.imgRock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgRock.TabIndex = 2;
+            this.imgRock.TabStop = false;
+            this.imgRock.Click += new System.EventHandler(this.imgRock_Click);
+            // 
+            // imgPaper
+            // 
+            this.imgPaper.Image = ((System.Drawing.Image)(resources.GetObject("imgPaper.Image")));
+            this.imgPaper.Location = new System.Drawing.Point(202, 64);
+            this.imgPaper.Name = "imgPaper";
+            this.imgPaper.Size = new System.Drawing.Size(150, 150);
+            this.imgPaper.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgPaper.TabIndex = 5;
+            this.imgPaper.TabStop = false;
+            this.imgPaper.Click += new System.EventHandler(this.imgPaper_Click);
+            // 
+            // imgScissor
+            // 
+            this.imgScissor.Image = ((System.Drawing.Image)(resources.GetObject("imgScissor.Image")));
+            this.imgScissor.Location = new System.Drawing.Point(382, 64);
+            this.imgScissor.Name = "imgScissor";
+            this.imgScissor.Size = new System.Drawing.Size(150, 150);
+            this.imgScissor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgScissor.TabIndex = 8;
+            this.imgScissor.TabStop = false;
+            this.imgScissor.Click += new System.EventHandler(this.imgScissors_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -216,9 +217,9 @@ namespace Rock_Paper_Scissors_v2App
             this.Controls.Add(this.labelBorderCompRock);
             this.Name = "Form1";
             this.Text = "Rock-Paper-Scissors_v2";
-            ((System.ComponentModel.ISupportInitialize)(this.imgScissor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgPaper)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgRock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPaper)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgScissor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,10 +230,8 @@ namespace Rock_Paper_Scissors_v2App
         private System.Windows.Forms.Label labelBorderCompRock;
         private System.Windows.Forms.Label labelBorderUserRock;
         private System.Windows.Forms.PictureBox imgRock;
-        private System.Windows.Forms.PictureBox imgPaper;
         private System.Windows.Forms.Label labelBorderUserPaper;
         private System.Windows.Forms.Label labelBorderCompPaper;
-        private System.Windows.Forms.PictureBox imgScissor;
         private System.Windows.Forms.Label labelBorderUserScissors;
         private System.Windows.Forms.Label labelBorderCompScissors;
         private System.Windows.Forms.Label labelComputerName;
@@ -241,6 +240,8 @@ namespace Rock_Paper_Scissors_v2App
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Label labelInfoTable;
         private System.Windows.Forms.TextBox txtReadName;
+        private System.Windows.Forms.PictureBox imgPaper;
+        private System.Windows.Forms.PictureBox imgScissor;
     }
 }
 
