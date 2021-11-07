@@ -124,7 +124,7 @@ namespace Rock_Paper_Scissors_v2App
 
         /* анализирует, что выбрали игроки
          и дает информацию об этом.
-         (бумага - 0, камень - 1, ножницы -2).
+         (бумага - 0, камень - 1, ножницы - 2).
         Если сложить оба выбора:
         - Ничья: (выбрали оба бумагу - это 0 + 0 = 0; оба камень 1 + 1 = 2; ножницы 2 + 2 = 4)
         - Бумага-камень 0 + 1 = 1
@@ -149,6 +149,23 @@ namespace Rock_Paper_Scissors_v2App
             else // сумма равна 2, но не ничья (ножницы-бумага)
             {
                 return "Scissors cut paper.";
+            }
+        }
+
+        private void labelUserName_DoubleClick(object sender, EventArgs e)
+        {
+            txtReadName.Visible = true;
+            txtReadName.Enabled = true;
+        }
+
+        // событие проверяет, была ли нажата какая-то клавиша
+        private void txtReadName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                labelUserName.Text = txtReadName.Text;
+                txtReadName.Visible = false;
+                txtReadName.Enabled = false;
             }
         }
     }
