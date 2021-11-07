@@ -103,7 +103,7 @@ namespace Rock_Paper_Scissors_v2App
             this.imgScissor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgScissor.TabIndex = 8;
             this.imgScissor.TabStop = false;
-            this.imgScissor.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.imgScissor.Click += new System.EventHandler(this.imgScissors_Click);
             // 
             // imgPaper
             // 
@@ -129,16 +129,17 @@ namespace Rock_Paper_Scissors_v2App
             // 
             // labelComputerName
             // 
-            this.labelComputerName.Font = new System.Drawing.Font("Monotype Corsiva", 21F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelComputerName.Font = new System.Drawing.Font("Monotype Corsiva", 19F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelComputerName.Location = new System.Drawing.Point(18, 260);
             this.labelComputerName.Name = "labelComputerName";
             this.labelComputerName.Size = new System.Drawing.Size(150, 45);
             this.labelComputerName.TabIndex = 9;
             this.labelComputerName.Text = "Computer";
+            this.labelComputerName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelUserName
             // 
-            this.labelUserName.Font = new System.Drawing.Font("Monotype Corsiva", 21F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUserName.Font = new System.Drawing.Font("Monotype Corsiva", 19F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUserName.Location = new System.Drawing.Point(378, 260);
             this.labelUserName.Name = "labelUserName";
             this.labelUserName.Size = new System.Drawing.Size(150, 45);

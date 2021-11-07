@@ -6,11 +6,14 @@ namespace Rock_Paper_Scissors_v2App
 {
     public partial class Form1 : Form
     {
+        int computerCount = 0; // число побед компа
+        int userCount = 0; // число побед игрока
+
         public Form1()
         {
             InitializeComponent();
         }
-        
+
         private void imgRock_Click(object sender, EventArgs e)
         {
             labelBorderCompRock.BackColor = Color.Green;
@@ -29,7 +32,7 @@ namespace Rock_Paper_Scissors_v2App
             WhoIsTheWinner(0);
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e) // ножницы (со странным названием)
+        private void imgScissors_Click(object sender, EventArgs e)
         {
             labelBorderCompScissors.BackColor = Color.Green;
             labelBorderUserScissors.BackColor = Color.Green;
@@ -56,7 +59,7 @@ namespace Rock_Paper_Scissors_v2App
             {
                 case 0:
                     labelBorderCompPaper.BackColor = Color.Red;
-                    // при ничьей видны будут обе рамки
+                    // при одинаковом выборе (игрока и компа) видны будут обе рамки
                     if (labelBorderUserPaper.BackColor != Color.Green)
                         labelBorderUserPaper.BackColor = Color.Red;
                     break;
@@ -81,20 +84,37 @@ namespace Rock_Paper_Scissors_v2App
             int computerChoise = ComputerChoise();
             int differentCompUser = computerChoise - userChoise;
 
-            if ((differentCompUser == 2) || (differentCompUser == 1))
+            if ((differentCompUser == -2) || (differentCompUser == 1))
             {
-                MessageBox.Show("Ur a winner!");
+                MessageBox.Show("UR a winner!");
+                userCount++;
             }
-            else if ((differentCompUser == -1) || (differentCompUser==2))
+            else if ((differentCompUser == -1) || (differentCompUser == 2))
             {
                 MessageBox.Show("The computer is winner!");
+                computerCount++;
             }
             else // то есть differentCompUser = 0
             {
                 MessageBox.Show("No one loses when the game's a draw!!!");
             }
 
-            MessageBox.Show($"Ur choise: {userChoise.ToString()}\nComputer choise: {computerChoise.ToString()}");
+            labelScore.Text = computerCount.ToString() + " : " + userCount.ToString();
+            ImgEnabled(true); // снять запрет на изменения
+            BorderColor(SystemColors.Control); // передаем цвет, кот. был по умолчанию
+        }
+
+        private void BorderColor(Color backColor)
+        {
+            // рамка компютера
+            labelBorderCompRock.BackColor = backColor;
+            labelBorderCompScissors.BackColor = backColor;
+            labelBorderCompPaper.BackColor = backColor;
+
+            // рамка игрока
+            labelBorderUserRock.BackColor = backColor;
+            labelBorderUserScissors.BackColor = backColor;
+            labelBorderUserPaper.BackColor = backColor;
         }
     }
 }
