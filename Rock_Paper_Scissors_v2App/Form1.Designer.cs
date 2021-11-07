@@ -38,6 +38,9 @@ namespace Rock_Paper_Scissors_v2App
             this.imgScissor = new System.Windows.Forms.PictureBox();
             this.imgPaper = new System.Windows.Forms.PictureBox();
             this.imgRock = new System.Windows.Forms.PictureBox();
+            this.labelComputerName = new System.Windows.Forms.Label();
+            this.labelUserName = new System.Windows.Forms.Label();
+            this.labelScore = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgScissor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPaper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgRock)).BeginInit();
@@ -124,11 +127,43 @@ namespace Rock_Paper_Scissors_v2App
             this.imgRock.TabStop = false;
             this.imgRock.Click += new System.EventHandler(this.imgRock_Click);
             // 
+            // labelComputerName
+            // 
+            this.labelComputerName.Font = new System.Drawing.Font("Monotype Corsiva", 21F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelComputerName.Location = new System.Drawing.Point(18, 260);
+            this.labelComputerName.Name = "labelComputerName";
+            this.labelComputerName.Size = new System.Drawing.Size(150, 45);
+            this.labelComputerName.TabIndex = 9;
+            this.labelComputerName.Text = "Computer";
+            // 
+            // labelUserName
+            // 
+            this.labelUserName.Font = new System.Drawing.Font("Monotype Corsiva", 21F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUserName.Location = new System.Drawing.Point(378, 260);
+            this.labelUserName.Name = "labelUserName";
+            this.labelUserName.Size = new System.Drawing.Size(150, 45);
+            this.labelUserName.TabIndex = 10;
+            this.labelUserName.Text = "User";
+            this.labelUserName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelScore
+            // 
+            this.labelScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Bold);
+            this.labelScore.Location = new System.Drawing.Point(198, 260);
+            this.labelScore.Name = "labelScore";
+            this.labelScore.Size = new System.Drawing.Size(158, 45);
+            this.labelScore.TabIndex = 11;
+            this.labelScore.Text = "0 : 0";
+            this.labelScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(542, 353);
+            this.Controls.Add(this.labelScore);
+            this.Controls.Add(this.labelUserName);
+            this.Controls.Add(this.labelComputerName);
             this.Controls.Add(this.imgScissor);
             this.Controls.Add(this.labelBorderUserScissors);
             this.Controls.Add(this.labelBorderCompScissors);
@@ -158,6 +193,9 @@ namespace Rock_Paper_Scissors_v2App
         private System.Windows.Forms.PictureBox imgScissor;
         private System.Windows.Forms.Label labelBorderUserScissors;
         private System.Windows.Forms.Label labelBorderCompScissors;
+        private System.Windows.Forms.Label labelComputerName;
+        private System.Windows.Forms.Label labelUserName;
+        private System.Windows.Forms.Label labelScore;
     }
 }
 
