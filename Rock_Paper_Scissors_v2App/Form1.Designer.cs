@@ -29,27 +29,27 @@ namespace Rock_Paper_Scissors_v2App
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelBorderComputerRock = new System.Windows.Forms.Label();
+            this.labelBorderCompRock = new System.Windows.Forms.Label();
             this.labelBorderUserRock = new System.Windows.Forms.Label();
             this.labelBorderUserPaper = new System.Windows.Forms.Label();
-            this.labelBorderComputerPaper = new System.Windows.Forms.Label();
+            this.labelBorderCompPaper = new System.Windows.Forms.Label();
             this.labelBorderUserScissors = new System.Windows.Forms.Label();
-            this.labelBorderComputerScissors = new System.Windows.Forms.Label();
-            this.imgScissors = new System.Windows.Forms.PictureBox();
+            this.labelBorderCompScissors = new System.Windows.Forms.Label();
+            this.imgScissor = new System.Windows.Forms.PictureBox();
             this.imgPaper = new System.Windows.Forms.PictureBox();
             this.imgRock = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.imgScissors)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgScissor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPaper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgRock)).BeginInit();
             this.SuspendLayout();
             // 
-            // labelBorderComputerRock
+            // labelBorderCompRock
             // 
-            this.labelBorderComputerRock.BackColor = System.Drawing.SystemColors.Control;
-            this.labelBorderComputerRock.Location = new System.Drawing.Point(18, 60);
-            this.labelBorderComputerRock.Name = "labelBorderComputerRock";
-            this.labelBorderComputerRock.Size = new System.Drawing.Size(158, 158);
-            this.labelBorderComputerRock.TabIndex = 0;
+            this.labelBorderCompRock.BackColor = System.Drawing.SystemColors.Control;
+            this.labelBorderCompRock.Location = new System.Drawing.Point(18, 60);
+            this.labelBorderCompRock.Name = "labelBorderCompRock";
+            this.labelBorderCompRock.Size = new System.Drawing.Size(158, 158);
+            this.labelBorderCompRock.TabIndex = 0;
             // 
             // labelBorderUserRock
             // 
@@ -67,13 +67,13 @@ namespace Rock_Paper_Scissors_v2App
             this.labelBorderUserPaper.Size = new System.Drawing.Size(154, 154);
             this.labelBorderUserPaper.TabIndex = 4;
             // 
-            // labelBorderComputerPaper
+            // labelBorderCompPaper
             // 
-            this.labelBorderComputerPaper.BackColor = System.Drawing.SystemColors.Control;
-            this.labelBorderComputerPaper.Location = new System.Drawing.Point(198, 60);
-            this.labelBorderComputerPaper.Name = "labelBorderComputerPaper";
-            this.labelBorderComputerPaper.Size = new System.Drawing.Size(158, 158);
-            this.labelBorderComputerPaper.TabIndex = 3;
+            this.labelBorderCompPaper.BackColor = System.Drawing.SystemColors.Control;
+            this.labelBorderCompPaper.Location = new System.Drawing.Point(198, 60);
+            this.labelBorderCompPaper.Name = "labelBorderCompPaper";
+            this.labelBorderCompPaper.Size = new System.Drawing.Size(158, 158);
+            this.labelBorderCompPaper.TabIndex = 3;
             // 
             // labelBorderUserScissors
             // 
@@ -83,24 +83,24 @@ namespace Rock_Paper_Scissors_v2App
             this.labelBorderUserScissors.Size = new System.Drawing.Size(154, 154);
             this.labelBorderUserScissors.TabIndex = 7;
             // 
-            // labelBorderComputerScissors
+            // labelBorderCompScissors
             // 
-            this.labelBorderComputerScissors.BackColor = System.Drawing.SystemColors.Control;
-            this.labelBorderComputerScissors.Location = new System.Drawing.Point(378, 60);
-            this.labelBorderComputerScissors.Name = "labelBorderComputerScissors";
-            this.labelBorderComputerScissors.Size = new System.Drawing.Size(158, 158);
-            this.labelBorderComputerScissors.TabIndex = 6;
+            this.labelBorderCompScissors.BackColor = System.Drawing.SystemColors.Control;
+            this.labelBorderCompScissors.Location = new System.Drawing.Point(378, 60);
+            this.labelBorderCompScissors.Name = "labelBorderCompScissors";
+            this.labelBorderCompScissors.Size = new System.Drawing.Size(158, 158);
+            this.labelBorderCompScissors.TabIndex = 6;
             // 
-            // imgScissors
+            // imgScissor
             // 
-            this.imgScissors.Image = global::Rock_Paper_Scissors_v2App.Properties.Resources.Scissors;
-            this.imgScissors.Location = new System.Drawing.Point(382, 64);
-            this.imgScissors.Name = "imgScissors";
-            this.imgScissors.Size = new System.Drawing.Size(150, 150);
-            this.imgScissors.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgScissors.TabIndex = 8;
-            this.imgScissors.TabStop = false;
-            this.imgScissors.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.imgScissor.Image = global::Rock_Paper_Scissors_v2App.Properties.Resources.Scissors;
+            this.imgScissor.Location = new System.Drawing.Point(382, 64);
+            this.imgScissor.Name = "imgScissor";
+            this.imgScissor.Size = new System.Drawing.Size(150, 150);
+            this.imgScissor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgScissor.TabIndex = 8;
+            this.imgScissor.TabStop = false;
+            this.imgScissor.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // imgPaper
             // 
@@ -111,6 +111,7 @@ namespace Rock_Paper_Scissors_v2App
             this.imgPaper.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgPaper.TabIndex = 5;
             this.imgPaper.TabStop = false;
+            this.imgPaper.Click += new System.EventHandler(this.imgPaper_Click);
             // 
             // imgRock
             // 
@@ -121,24 +122,25 @@ namespace Rock_Paper_Scissors_v2App
             this.imgRock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgRock.TabIndex = 2;
             this.imgRock.TabStop = false;
+            this.imgRock.Click += new System.EventHandler(this.imgRock_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(542, 353);
-            this.Controls.Add(this.imgScissors);
+            this.Controls.Add(this.imgScissor);
             this.Controls.Add(this.labelBorderUserScissors);
-            this.Controls.Add(this.labelBorderComputerScissors);
+            this.Controls.Add(this.labelBorderCompScissors);
             this.Controls.Add(this.imgPaper);
             this.Controls.Add(this.labelBorderUserPaper);
-            this.Controls.Add(this.labelBorderComputerPaper);
+            this.Controls.Add(this.labelBorderCompPaper);
             this.Controls.Add(this.imgRock);
             this.Controls.Add(this.labelBorderUserRock);
-            this.Controls.Add(this.labelBorderComputerRock);
+            this.Controls.Add(this.labelBorderCompRock);
             this.Name = "Form1";
             this.Text = "Rock-Paper-Scissors_v2";
-            ((System.ComponentModel.ISupportInitialize)(this.imgScissors)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgScissor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPaper)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgRock)).EndInit();
             this.ResumeLayout(false);
@@ -147,15 +149,15 @@ namespace Rock_Paper_Scissors_v2App
 
         #endregion
 
-        private System.Windows.Forms.Label labelBorderComputerRock;
+        private System.Windows.Forms.Label labelBorderCompRock;
         private System.Windows.Forms.Label labelBorderUserRock;
         private System.Windows.Forms.PictureBox imgRock;
         private System.Windows.Forms.PictureBox imgPaper;
         private System.Windows.Forms.Label labelBorderUserPaper;
-        private System.Windows.Forms.Label labelBorderComputerPaper;
-        private System.Windows.Forms.PictureBox imgScissors;
+        private System.Windows.Forms.Label labelBorderCompPaper;
+        private System.Windows.Forms.PictureBox imgScissor;
         private System.Windows.Forms.Label labelBorderUserScissors;
-        private System.Windows.Forms.Label labelBorderComputerScissors;
+        private System.Windows.Forms.Label labelBorderCompScissors;
     }
 }
 
