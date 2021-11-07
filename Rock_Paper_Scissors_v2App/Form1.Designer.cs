@@ -41,6 +41,8 @@ namespace Rock_Paper_Scissors_v2App
             this.labelComputerName = new System.Windows.Forms.Label();
             this.labelUserName = new System.Windows.Forms.Label();
             this.labelScore = new System.Windows.Forms.Label();
+            this.buttonNext = new System.Windows.Forms.Button();
+            this.labelInfoTable = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgScissor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPaper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgRock)).BeginInit();
@@ -149,7 +151,7 @@ namespace Rock_Paper_Scissors_v2App
             // 
             // labelScore
             // 
-            this.labelScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Bold);
+            this.labelScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold);
             this.labelScore.Location = new System.Drawing.Point(198, 260);
             this.labelScore.Name = "labelScore";
             this.labelScore.Size = new System.Drawing.Size(158, 45);
@@ -157,11 +159,33 @@ namespace Rock_Paper_Scissors_v2App
             this.labelScore.Text = "0 : 0";
             this.labelScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // buttonNext
+            // 
+            this.buttonNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.buttonNext.Location = new System.Drawing.Point(420, 320);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(100, 25);
+            this.buttonNext.TabIndex = 12;
+            this.buttonNext.Text = "Play more";
+            this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
+            // 
+            // labelInfoTable
+            // 
+            this.labelInfoTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.labelInfoTable.Location = new System.Drawing.Point(20, 20);
+            this.labelInfoTable.Name = "labelInfoTable";
+            this.labelInfoTable.Size = new System.Drawing.Size(510, 25);
+            this.labelInfoTable.TabIndex = 13;
+            this.labelInfoTable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(542, 353);
+            this.Controls.Add(this.labelInfoTable);
+            this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.labelScore);
             this.Controls.Add(this.labelUserName);
             this.Controls.Add(this.labelComputerName);
@@ -197,6 +221,8 @@ namespace Rock_Paper_Scissors_v2App
         private System.Windows.Forms.Label labelComputerName;
         private System.Windows.Forms.Label labelUserName;
         private System.Windows.Forms.Label labelScore;
+        private System.Windows.Forms.Button buttonNext;
+        private System.Windows.Forms.Label labelInfoTable;
     }
 }
 

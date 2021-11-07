@@ -86,22 +86,20 @@ namespace Rock_Paper_Scissors_v2App
 
             if ((differentCompUser == -2) || (differentCompUser == 1))
             {
-                MessageBox.Show("UR a winner!");
+                labelInfoTable.Text = InfoTable(computerChoise, userChoise);
                 userCount++;
             }
             else if ((differentCompUser == -1) || (differentCompUser == 2))
             {
-                MessageBox.Show("The computer is winner!");
+                labelInfoTable.Text = InfoTable(computerChoise, userChoise);
                 computerCount++;
             }
             else // то есть differentCompUser = 0
             {
-                MessageBox.Show("No one loses when the game's a draw!!!");
+                labelInfoTable.Text = InfoTable(computerChoise, userChoise);
             }
 
             labelScore.Text = computerCount.ToString() + " : " + userCount.ToString();
-            ImgEnabled(true); // снять запрет на изменения
-            BorderColor(SystemColors.Control); // передаем цвет, кот. был по умолчанию
         }
 
         private void BorderColor(Color backColor)
@@ -115,6 +113,43 @@ namespace Rock_Paper_Scissors_v2App
             labelBorderUserRock.BackColor = backColor;
             labelBorderUserScissors.BackColor = backColor;
             labelBorderUserPaper.BackColor = backColor;
+        }
+
+        private void buttonNext_Click(object sender, EventArgs e)
+        {
+            ImgEnabled(true); // снятие запрета будет только после нажатия кнопки "Еще разок..."
+            BorderColor(SystemColors.Control); /* и после этого будут изменяться границы. 
+                                                * Передаем цвет, кот. был по умолчанию */
+        }
+
+        /* анализирует, что выбрали игроки
+         и дает информацию об этом.
+         (бумага - 0, камень - 1, ножницы -2).
+        Если сложить оба выбора:
+        - Ничья: (выбрали оба бумагу - это 0 + 0 = 0; оба камень 1 + 1 = 2; ножницы 2 + 2 = 4)
+        - Бумага-камень 0 + 1 = 1
+        - Ножницы-бумага 2 + 0 = 2
+        - Камень-ножницы 1 + 2 = 3 */
+        private string InfoTable(int computerChoise, int userChoise)
+        {
+            int sumOfChoise = computerChoise + userChoise;
+
+            if (computerChoise == userChoise)
+            {
+                return "No one loses when the game's a draw!!!"; // ничья
+            }
+            else if (sumOfChoise == 1)
+            {
+                return "Paper wrapped a stone.";
+            }
+            else if (sumOfChoise == 3)
+            {
+                return "A stone broke scissors.";
+            }
+            else // сумма равна 2, но не ничья (ножницы-бумага)
+            {
+                return "Scissors cut paper.";
+            }
         }
     }
 }
