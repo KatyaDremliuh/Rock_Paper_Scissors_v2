@@ -10,21 +10,14 @@ namespace Rock_Paper_Scissors_v2App
         {
             InitializeComponent();
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            labelBorderCompScissors.BackColor = Color.Green;
-            labelBorderUserScissors.BackColor = Color.Green;
-
-            ImgEnabled(false);
-        }
-
+        
         private void imgRock_Click(object sender, EventArgs e)
         {
             labelBorderCompRock.BackColor = Color.Green;
             labelBorderUserRock.BackColor = Color.Green;
 
             ImgEnabled(false);
+            WhoIsTheWinner(1);
         }
 
         private void imgPaper_Click(object sender, EventArgs e)
@@ -33,6 +26,16 @@ namespace Rock_Paper_Scissors_v2App
             labelBorderUserPaper.BackColor = Color.Green;
 
             ImgEnabled(false);
+            WhoIsTheWinner(0);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e) // ножницы (со странным названием)
+        {
+            labelBorderCompScissors.BackColor = Color.Green;
+            labelBorderUserScissors.BackColor = Color.Green;
+
+            ImgEnabled(false);
+            WhoIsTheWinner(2);
         }
 
         private void ImgEnabled(bool choice)
@@ -53,16 +56,45 @@ namespace Rock_Paper_Scissors_v2App
             {
                 case 0:
                     labelBorderCompPaper.BackColor = Color.Red;
+                    // при ничьей видны будут обе рамки
+                    if (labelBorderUserPaper.BackColor != Color.Green)
+                        labelBorderUserPaper.BackColor = Color.Red;
                     break;
                 case 1:
                     labelBorderCompRock.BackColor = Color.Red;
+                    if (labelBorderUserRock.BackColor != Color.Green)
+                        labelBorderUserRock.BackColor = Color.Red;
                     break;
                 case 2:
                     labelBorderCompScissors.BackColor = Color.Red;
+                    if (labelBorderUserScissors.BackColor != Color.Green)
+                        labelBorderUserScissors.BackColor = Color.Red;
                     break;
             }
 
             return computerChoise;
+        }
+
+        // Определение победителя
+        private void WhoIsTheWinner(int userChoise)
+        {
+            int computerChoise = ComputerChoise();
+            int differentCompUser = computerChoise - userChoise;
+
+            if ((differentCompUser == 2) || (differentCompUser == 1))
+            {
+                MessageBox.Show("Ur a winner!");
+            }
+            else if ((differentCompUser == -1) || (differentCompUser==2))
+            {
+                MessageBox.Show("The computer is winner!");
+            }
+            else // то есть differentCompUser = 0
+            {
+                MessageBox.Show("No one loses when the game's a draw!!!");
+            }
+
+            MessageBox.Show($"Ur choise: {userChoise.ToString()}\nComputer choise: {computerChoise.ToString()}");
         }
     }
 }
