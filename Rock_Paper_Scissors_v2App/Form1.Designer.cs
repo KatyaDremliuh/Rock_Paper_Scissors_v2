@@ -199,6 +199,7 @@ namespace Rock_Paper_Scissors_v2App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(542, 353);
             this.Controls.Add(this.txtReadName);
             this.Controls.Add(this.labelInfoTable);
