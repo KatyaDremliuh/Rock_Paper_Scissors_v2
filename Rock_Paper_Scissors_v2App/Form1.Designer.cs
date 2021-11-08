@@ -48,6 +48,7 @@ namespace Rock_Paper_Scissors_v2App
             this.PaperWin = new System.Windows.Forms.PictureBox();
             this.ScissorsWin = new System.Windows.Forms.PictureBox();
             this.RockWin = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgRock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPaper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgScissor)).BeginInit();
@@ -107,9 +108,9 @@ namespace Rock_Paper_Scissors_v2App
             // labelComputerName
             // 
             this.labelComputerName.Font = new System.Drawing.Font("Arial Black", 19F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelComputerName.Location = new System.Drawing.Point(35, 400);
+            this.labelComputerName.Location = new System.Drawing.Point(30, 420);
             this.labelComputerName.Name = "labelComputerName";
-            this.labelComputerName.Size = new System.Drawing.Size(200, 90);
+            this.labelComputerName.Size = new System.Drawing.Size(220, 50);
             this.labelComputerName.TabIndex = 9;
             this.labelComputerName.Text = "Computer";
             this.labelComputerName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -138,9 +139,9 @@ namespace Rock_Paper_Scissors_v2App
             // buttonNext
             // 
             this.buttonNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.buttonNext.Location = new System.Drawing.Point(390, 495);
+            this.buttonNext.Location = new System.Drawing.Point(380, 495);
             this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(120, 40);
+            this.buttonNext.Size = new System.Drawing.Size(140, 40);
             this.buttonNext.TabIndex = 12;
             this.buttonNext.Text = "Play more";
             this.buttonNext.UseVisualStyleBackColor = true;
@@ -160,9 +161,9 @@ namespace Rock_Paper_Scissors_v2App
             this.txtReadName.BackColor = System.Drawing.SystemColors.Control;
             this.txtReadName.Enabled = false;
             this.txtReadName.Font = new System.Drawing.Font("Comic Sans MS", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReadName.Location = new System.Drawing.Point(645, 419);
+            this.txtReadName.Location = new System.Drawing.Point(645, 420);
             this.txtReadName.Name = "txtReadName";
-            this.txtReadName.Size = new System.Drawing.Size(190, 53);
+            this.txtReadName.Size = new System.Drawing.Size(220, 53);
             this.txtReadName.TabIndex = 14;
             this.txtReadName.Text = "Player";
             this.txtReadName.Visible = false;
@@ -234,12 +235,24 @@ namespace Rock_Paper_Scissors_v2App
             this.RockWin.TabStop = false;
             this.RockWin.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.button1.Location = new System.Drawing.Point(53, 495);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 40);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Reset the score";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.buttonReset_Click);
+            // 
             // pictBoxPaperWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.RockWin);
             this.Controls.Add(this.ScissorsWin);
             this.Controls.Add(this.PaperWin);
@@ -291,6 +304,7 @@ namespace Rock_Paper_Scissors_v2App
         private System.Windows.Forms.PictureBox ScissorsWin;
         private System.Windows.Forms.PictureBox PaperWin;
         private System.Windows.Forms.PictureBox RockWin;
+        private System.Windows.Forms.Button button1;
     }
 }
 

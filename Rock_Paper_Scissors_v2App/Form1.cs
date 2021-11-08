@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Rock_Paper_Scissors_v2App
@@ -87,12 +88,12 @@ namespace Rock_Paper_Scissors_v2App
 
             if ((differentCompUser == -2) || (differentCompUser == 1))
             {
-                labelInfoTable.Text = InfoTable(computerChoise, userChoise);
+                labelInfoTable.Text = InfoTable(computerChoise, userChoise) + "       Computer's a winner!";
                 _computerCount++;
             }
             else if ((differentCompUser == -1) || (differentCompUser == 2))
             {
-                labelInfoTable.Text = InfoTable(computerChoise, userChoise);
+                labelInfoTable.Text = InfoTable(computerChoise, userChoise) + $"       {labelUserName.Text}'s a winner!";
                 _userCount++;
             }
             else // то есть differentCompUser = 0
@@ -119,7 +120,7 @@ namespace Rock_Paper_Scissors_v2App
         private void buttonNext_Click(object sender, EventArgs e)
         {
             ImgEnabled(true); // снятие запрета будет только после нажатия кнопки "Еще играть..."
-            BorderColor(SystemColors.Control); /* и после этого будут изменяться границы. 
+            BorderColor(SystemColors.Info); /* и после этого будут изменяться границы. 
                                                 * Передаем цвет, кот. был по умолчанию */
         }
 
@@ -168,6 +169,17 @@ namespace Rock_Paper_Scissors_v2App
                 txtReadName.Visible = false;
                 txtReadName.Enabled = false;
             }
+        }
+
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            _userCount = 0;
+            _computerCount = 0;
+
+            labelScore.Text = "0 : 0";
+
+            ImgEnabled(true); // разрешить нажимать на картинки
+            BorderColor(SystemColors.Info); // все границы (borders) сделать цветом фона основного
         }
     }
 }
