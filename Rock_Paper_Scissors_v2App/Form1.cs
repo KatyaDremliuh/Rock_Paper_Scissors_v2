@@ -29,16 +29,16 @@ namespace Rock_Paper_Scissors_v2App
             labelBorderUserPaper.BackColor = Color.Green;
 
             ImgEnabled(false);
-            WhoIsTheWinner(0);
+            WhoIsTheWinner(2);
         }
 
         private void imgScissors_Click(object sender, EventArgs e)
         {
-            labelBorderCompScissors.BackColor = Color.Green;
             labelBorderUserScissors.BackColor = Color.Green;
+            labelBorderCompScissors.BackColor = Color.Green;
 
             ImgEnabled(false);
-            WhoIsTheWinner(2);
+            WhoIsTheWinner(0);
         }
 
         private void ImgEnabled(bool choice)
@@ -49,7 +49,7 @@ namespace Rock_Paper_Scissors_v2App
         }
 
         // выбор знака компьютером
-        // бумага - 0, камень - 1, ножницы -2
+        // бумага - 2, камень - 1, ножницы -0
         private int ComputerChoise()
         {
             Random random = new Random();
@@ -58,10 +58,10 @@ namespace Rock_Paper_Scissors_v2App
             switch (computerChoise)
             {
                 case 0:
-                    labelBorderCompPaper.BackColor = Color.Red;
+                    labelBorderCompScissors.BackColor = Color.Red;
                     // при одинаковом выборе (игрока и компа) видны будут обе рамки
-                    if (labelBorderUserPaper.BackColor != Color.Green)
-                        labelBorderUserPaper.BackColor = Color.Red;
+                    if (labelBorderUserScissors.BackColor != Color.Green)
+                        labelBorderUserScissors.BackColor = Color.Red;
                     break;
                 case 1:
                     labelBorderCompRock.BackColor = Color.Red;
@@ -69,9 +69,9 @@ namespace Rock_Paper_Scissors_v2App
                         labelBorderUserRock.BackColor = Color.Red;
                     break;
                 case 2:
-                    labelBorderCompScissors.BackColor = Color.Red;
-                    if (labelBorderUserScissors.BackColor != Color.Green)
-                        labelBorderUserScissors.BackColor = Color.Red;
+                    labelBorderUserPaper.BackColor = Color.Red;
+                    if (labelBorderCompPaper.BackColor != Color.Green)
+                        labelBorderCompPaper.BackColor = Color.Red;
                     break;
             }
 
@@ -79,6 +79,7 @@ namespace Rock_Paper_Scissors_v2App
         }
 
         // Определение победителя
+        // бумага - 2, камень - 1, ножницы -0
         private void WhoIsTheWinner(int userChoise)
         {
             int computerChoise = ComputerChoise();
@@ -87,12 +88,12 @@ namespace Rock_Paper_Scissors_v2App
             if ((differentCompUser == -2) || (differentCompUser == 1))
             {
                 labelInfoTable.Text = InfoTable(computerChoise, userChoise);
-                _userCount++;
+                _computerCount++;
             }
             else if ((differentCompUser == -1) || (differentCompUser == 2))
             {
                 labelInfoTable.Text = InfoTable(computerChoise, userChoise);
-                _computerCount++;
+                _userCount++;
             }
             else // то есть differentCompUser = 0
             {
@@ -106,30 +107,30 @@ namespace Rock_Paper_Scissors_v2App
         {
             // рамка компютера
             labelBorderCompRock.BackColor = backColor;
+            labelBorderUserPaper.BackColor = backColor;
             labelBorderCompScissors.BackColor = backColor;
-            labelBorderCompPaper.BackColor = backColor;
 
             // рамка игрока
             labelBorderUserRock.BackColor = backColor;
+            labelBorderCompPaper.BackColor = backColor;
             labelBorderUserScissors.BackColor = backColor;
-            labelBorderUserPaper.BackColor = backColor;
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
-            ImgEnabled(true); // снятие запрета будет только после нажатия кнопки "Еще разок..."
+            ImgEnabled(true); // снятие запрета будет только после нажатия кнопки "Еще играть..."
             BorderColor(SystemColors.Control); /* и после этого будут изменяться границы. 
                                                 * Передаем цвет, кот. был по умолчанию */
         }
 
         /* анализирует, что выбрали игроки
          и дает информацию об этом.
-         (бумага - 0, камень - 1, ножницы - 2).
+         (бумага - 2, камень - 1, ножницы - 0).
         Если сложить оба выбора:
         - Ничья: (выбрали оба бумагу - это 0 + 0 = 0; оба камень 1 + 1 = 2; ножницы 2 + 2 = 4)
-        - Бумага-камень 0 + 1 = 1
-        - Ножницы-бумага 2 + 0 = 2
-        - Камень-ножницы 1 + 2 = 3 */
+        - Бумага-камень (2 + 1 = 3) -> Б
+        - Ножницы-бумага (0 + 2 = 2) -> Н
+        - Камень-ножницы (1 + 0 = 1) -> К */
         private string InfoTable(int computerChoise, int userChoise)
         {
             int sumOfChoise = computerChoise + userChoise;
@@ -138,11 +139,11 @@ namespace Rock_Paper_Scissors_v2App
             {
                 return "No one loses when the game's a draw!!!"; // ничья
             }
-            else if (sumOfChoise == 1)
+            else if (sumOfChoise == 3)
             {
                 return "Paper wrapped a stone."; // Б
             }
-            else if (sumOfChoise == 3)
+            else if (sumOfChoise == 1)
             {
                 return "A stone broke scissors."; // К
             }
