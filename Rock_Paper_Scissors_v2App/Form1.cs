@@ -122,6 +122,12 @@ namespace Rock_Paper_Scissors_v2App
             ImgEnabled(true); // снятие запрета будет только после нажатия кнопки "Еще играть..."
             BorderColor(SystemColors.Info); /* и после этого будут изменяться границы. 
                                                 * Передаем цвет, кот. был по умолчанию */
+           
+            // сделать результирующие картинки снова невидимыми
+            rockWin.Visible = false;
+            scissorsWin.Visible = false;
+            paperWin.Visible = false;
+            pictureBoxBalance.Visible = false;
         }
 
         /* анализирует, что выбрали игроки
@@ -138,18 +144,22 @@ namespace Rock_Paper_Scissors_v2App
 
             if (computerChoise == userChoise)
             {
+                pictureBoxBalance.Visible = true;
                 return "No one loses when the game's a draw!!!"; // ничья
             }
             else if (sumOfChoise == 3)
             {
+                paperWin.Visible = true;
                 return "Paper wrapped a stone."; // Б
             }
             else if (sumOfChoise == 1)
             {
-                return "A stone broke scissors."; // К
+                rockWin.Visible = true;
+                return "A rock broke scissors."; // К
             }
             else // сумма равна 2, но не ничья (ножницы-бумага)
             {
+                scissorsWin.Visible = true;
                 return "Scissors cut paper."; // Н
             }
         }
